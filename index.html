@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SVG - Scalable Vector Graphics</h1>
+        <img src="images/myfirst.svg" alt="graphic of a square with a circle" />
+
+        <!-- Embeded SVG code directly inside HTML and remove version xmlns -->
+        <svg class="dice" width="200" height="200" viewBox="0 0 200 200">
+            <rect x="0" y="0" width="200" height="200" rx="8" ry="4" fill="#4dd0e1" />
+            <circle cx="50" cy="50" r="25" fill="#d50000" />
+            <circle cx="150" cy="150" r="25" fill="#d50000" />
+            <circle cx="50" cy="150" r="25" fill="#d50000" />
+            <circle cx="150" cy="50" r="25" fill="#d50000" />
+            <circle cx="100" cy="100" r="25" fill="#d50000" />
+        </svg>
+
+        <!-- reusing graphic with use -->
+
+        <svg class="dice" width="200" height="200" viewBox="0 0 200 200">
+            <rect id="sq" x="0" y="0" width="200" height="200" rx="8" ry="4" fill="#4dd0e1" />
+            <circle id="dot" cx="50" cy="50" r="25" fill="#d50000" />
+            <use xlink:href="#dot" x="100"></use>
+            <use xlink:href="#dot" y="100"></use>
+            <use xlink:href="#dot" x="100" y="100"></use>
+        </svg>
+
+        <!-- defs, use, and group -->
+
+        <svg class="dice5" width="200" height="200" viewBox="0 0 200 200">
+            <defs>
+                <rect id="box" x="0" y="0" width="200" height="200" rx="10" ry="14" fill="#4dd0e1" />
+                <circle id="point" cx="50" cy="50" r="25" fill="#058aff" />
+            </defs>
+            <use xlink:href="#box" x="0" y="0"></use>
+            <g>
+                <use xlink:href="#point" x="0" y="0"></use>
+                <use xlink:href="#point" x="100" y="0"></use>
+                <use xlink:href="#point" x="50" y="50"></use>
+                <use xlink:href="#point" x="0" y="100"></use>
+                <use xlink:href="#point" x="100" y="100"></use>
+            </g>
+        </svg>
+    </div>
+
+
+    
+</body>
+</html>
