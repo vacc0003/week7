@@ -7,3 +7,34 @@
 .dice:hover circle {
     transform: scale(1.1);
 }
+
+.cls-1{fill:#ff9fe0;}
+.cls-2{fill:#fff;}
+.cls-3{fill:#e275f6;}
+
+@keyframes move {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.pupil{
+    animation: move 1s infinite;
+}
+
+.smily-wrap:hover .pupil {
+    animation-play-state: paused;
+
+}
+
+.smily-wrap:hover .cls-1 {
+    fill:#f82f2f;
+
+}
+
